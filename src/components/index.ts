@@ -1,6 +1,4 @@
-export { default as Loading } from './Loading/Loading'
 export { default as Input } from './Form/Input/Input'
-export { default as Select } from './Form/Select/Select'
 export { default as Button } from './Button/Button'
 export { default as TodoForm } from './Todo/TodoForm/TodoForm'
 export { default as TodoList } from './Todo/TodoList/TodoList'
