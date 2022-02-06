@@ -27,7 +27,7 @@ const todoSlice = createSlice({
       }
     },
     clearCompletedTodos: (state) => {
-      return state.filter((todo) => !todo.completed)
+      return state.map((todo) => (todo.completed ? { ...todo, completed: false } : todo))
     },
   },
 })
