@@ -20,7 +20,12 @@ const TodoForm = () => {
 
   return (
     <div className="flex items-center gap-6">
-      <Input value={title} onChange={(e) => setTitle(e.currentTarget.value)} />
+      <Input
+        value={title}
+        placeholder="Add Todo"
+        onChange={(e) => setTitle(e.currentTarget.value)}
+        className="min-w-[300px] "
+      />
       <Button label="Add" onClick={onSave} className="px-5" />
     </div>
   )

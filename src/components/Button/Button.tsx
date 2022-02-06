@@ -12,7 +12,7 @@ const Button: FC<Props> = ({ label, onClick, className, children, disabled, ...r
   return (
     <button
       className={classnames(
-        'h-[42px] rounded-lg border border-gray-300 text-sm font-medium shadow-sm hover:bg-gray-700 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 disabled:select-none disabled:opacity-50 disabled:hover:bg-transparent',
+        'h-[42px] rounded-lg border border-gray-300 px-4 text-sm font-medium capitalize shadow-sm hover:bg-gray-700 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 disabled:select-none disabled:opacity-50 disabled:hover:bg-transparent',
         className,
       )}
       onClick={onClick}

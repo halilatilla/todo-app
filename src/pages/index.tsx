@@ -1,12 +1,9 @@
 import { NextPage } from 'next'
 import Head from 'next/head'
 
-import { useAppSelector } from '@src/store/store'
-import { TodoForm } from '@src/components'
+import { TodoForm, TodoList } from '@src/components'
 
 const Home: NextPage = () => {
-  const todos = useAppSelector((state) => state.todos)
-
   return (
     <>
       <Head>
@@ -14,12 +11,9 @@ const Home: NextPage = () => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <main className="container mx-auto space-y-8 p-3 md:p-6">
+        <h1 className="text-2xl font-bold capitalize">an awesome to do list 😎</h1>
         <TodoForm />
-        <ul>
-          {todos.map((todo) => (
-            <li>{todo.title} </li>
-          ))}
-        </ul>
+        <TodoList />
       </main>
     </>
   )
