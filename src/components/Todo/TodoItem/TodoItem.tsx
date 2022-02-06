@@ -28,7 +28,13 @@ const TodoItem: FC<Props> = ({ id, title, completed }) => {
         },
       )}
     >
-      <p className="max-w-xs overflow-hidden font-medium capitalize">{title}</p>
+      <p
+        className={classnames('max-w-xs overflow-hidden font-medium capitalize', {
+          ' text-gray-500': completed,
+        })}
+      >
+        {title}
+      </p>
       <div className="space-x-4">
         <Button
           className={classnames('border-green-500 text-green-500', { 'border-gray-500 text-gray-500': completed })}

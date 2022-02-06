@@ -26,8 +26,11 @@ const todoSlice = createSlice({
         todo.completed = !todo.completed
       }
     },
+    clearCompletedTodos: (state) => {
+      return state.filter((todo) => !todo.completed)
+    },
   },
 })
 
 export default todoSlice.reducer
-export const { addTodo, removeTodo, toggleTodo } = todoSlice.actions
+export const { addTodo, removeTodo, toggleTodo, clearCompletedTodos } = todoSlice.actions

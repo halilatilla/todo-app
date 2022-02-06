@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import { useAppDispatch } from '@src/store/store'
-import { addTodo } from '@src/store/reducers/todoSlice'
+import { addTodo, clearCompletedTodos } from '@src/store/reducers/todoSlice'
 import { Input, Button } from '@src/components'
 
 const TodoForm = () => {
@@ -24,9 +24,10 @@ const TodoForm = () => {
         value={title}
         placeholder="Add Todo"
         onChange={(e) => setTitle(e.currentTarget.value)}
-        className="min-w-[300px] "
+        className="min-w-[320px]"
       />
       <Button label="Add" onClick={onSave} className="px-5" />
+      <Button label="clear completed" onClick={() => dispatch(clearCompletedTodos())} className="px-5" />
     </div>
   )
 }

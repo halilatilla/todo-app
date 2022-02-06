@@ -7,7 +7,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Movie App</title>
+        <title>Todo App</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <main className="container mx-auto flex flex-col items-center space-y-8 p-3 md:p-6">
