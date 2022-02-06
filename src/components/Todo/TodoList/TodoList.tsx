@@ -7,7 +7,7 @@ const TodoList = () => {
   const todoList = useAppSelector((state) => state.todoList)
 
   return (
-    <ul className="divide-y-1 divide- flex flex-col space-y-3">
+    <ul className="flex flex-col space-y-3 ">
       <AnimatePresence>
         {todoList?.map((todo) => (
           <TodoItem key={todo.id} id={todo.id} title={todo.title} completed={todo.completed} />

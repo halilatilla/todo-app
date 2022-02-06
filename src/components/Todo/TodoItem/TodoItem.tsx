@@ -21,9 +21,12 @@ const TodoItem: FC<Props> = ({ id, title, completed }) => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, x: -20 }}
       key={id}
-      className={classnames('flex max-w-2xl items-center justify-between space-x-3 rounded bg-gray-900 p-3', {
-        'line-through': completed,
-      })}
+      className={classnames(
+        'flex min-w-[400px] max-w-2xl items-center justify-between space-x-8 rounded bg-gray-900 p-3',
+        {
+          'line-through': completed,
+        },
+      )}
     >
       <p className="max-w-xs overflow-hidden font-medium capitalize">{title}</p>
       <div className="space-x-4">
