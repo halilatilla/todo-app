@@ -2,7 +2,7 @@ import { FC } from 'react'
 import classnames from 'classnames'
 import { motion } from 'framer-motion'
 
-import { removeTodo, toggleTodo } from '@src/store/reducers/todoSlice'
+import { removeTodo, toggleComplete } from '@src/store/reducers/todoSlice'
 import { useAppDispatch } from '@src/store/store'
 import { Button } from '@src/components'
 
@@ -38,7 +38,7 @@ const TodoItem: FC<Props> = ({ id, title, completed }) => {
       <div className="space-x-4">
         <Button
           className={classnames('border-green-500 text-green-500', { 'border-gray-500 text-gray-500': completed })}
-          onClick={() => dispatch(toggleTodo(id))}
+          onClick={() => dispatch(toggleComplete(id))}
         >
           {completed ? '👎' : '👍'}
         </Button>
