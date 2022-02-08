@@ -2,9 +2,11 @@ import { FC } from 'react'
 import classnames from 'classnames'
 import { motion } from 'framer-motion'
 
-import { removeTodo, toggleTodo } from '@src/store/reducers/todoSlice'
+import { removeTodo, toggleComplete } from '@src/store/reducers/todoSlice'
 import { useAppDispatch } from '@src/store/store'
 import { Button } from '@src/components'
+
+import styles from './todoItem.module.css'
 
 export interface Props {
   id: string
@@ -15,21 +17,26 @@ export interface Props {
 const TodoItem: FC<Props> = ({ id, title, completed }) => {
   const dispatch = useAppDispatch()
 
+  const onRemoveTodo = () => {
+    dispatch(removeTodo(id))
+  }
+
+  const onToggleComplete = () => {
+    dispatch(toggleComplete(id))
+  }
+
   return (
     <motion.li
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, x: -20 }}
       key={id}
-      className={classnames(
-        'flex min-w-[400px] max-w-2xl items-center justify-between space-x-8 rounded bg-gray-900 p-3',
-        {
-          'line-through': completed,
-        },
-      )}
+      className={classnames(styles.todoItem, {
+        'line-through': completed,
+      })}
     >
       <p
-        className={classnames('max-w-xs overflow-hidden font-medium capitalize', {
+        className={classnames(styles.todoItemText, {
           ' text-gray-500': completed,
         })}
       >
@@ -38,11 +45,11 @@ const TodoItem: FC<Props> = ({ id, title, completed }) => {
       <div className="space-x-4">
         <Button
           className={classnames('border-green-500 text-green-500', { 'border-gray-500 text-gray-500': completed })}
-          onClick={() => dispatch(toggleTodo(id))}
+          onClick={onToggleComplete}
         >
           {completed ? '👎' : '👍'}
         </Button>
-        <Button className="border-red-500 text-red-500 " onClick={() => dispatch(removeTodo(id))}>
+        <Button className="border-red-500 text-red-500 " onClick={onRemoveTodo}>
           🗑
         </Button>
       </div>
