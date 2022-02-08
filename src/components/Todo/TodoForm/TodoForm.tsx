@@ -11,12 +11,9 @@ const TodoForm = () => {
 
   const onAddTodo = (event: any) => {
     event.preventDefault()
-    if (title) {
-      dispatch(addTodo(title))
-      setTitle('')
-    } else {
-      alert('You must enter a title for your todo')
-    }
+    if (!title || /^\s*$/.test(title)) return
+    dispatch(addTodo(title))
+    setTitle('')
   }
 
   const onClearCompleted = () => {
