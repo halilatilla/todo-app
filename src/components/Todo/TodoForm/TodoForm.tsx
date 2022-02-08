@@ -9,7 +9,8 @@ const TodoForm = () => {
 
   const dispatch = useAppDispatch()
 
-  const onSave = () => {
+  const onAddTodo = (event: any) => {
+    event.preventDefault()
     if (title) {
       dispatch(addTodo(title))
       setTitle('')
@@ -18,17 +19,21 @@ const TodoForm = () => {
     }
   }
 
+  const onClearCompleted = () => {
+    dispatch(clearCompletedTodos())
+  }
+
   return (
-    <div className="flex items-center gap-6">
+    <form className="flex items-center gap-6" onSubmit={onAddTodo}>
       <Input
         value={title}
         placeholder="Add Todo"
         onChange={(e) => setTitle(e.currentTarget.value)}
         className="min-w-[320px]"
       />
-      <Button label="Add" onClick={onSave} className="px-5" />
-      <Button label="clear completed" onClick={() => dispatch(clearCompletedTodos())} className="px-5" />
-    </div>
+      <Button label="Add" className="px-5" type="submit" />
+      <Button label="clear completed" onClick={onClearCompleted} className="px-5" />
+    </form>
   )
 }
 

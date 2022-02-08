@@ -6,9 +6,10 @@ interface Props {
   onClick?: () => void
   className?: string
   disabled?: boolean
+  type?: 'submit' | 'button' | 'reset'
 }
 
-const Button: FC<Props> = ({ label, onClick, className, children, disabled, ...rest }) => {
+const Button: FC<Props> = ({ label, onClick, className, children, disabled, type = 'button', ...rest }) => {
   return (
     <button
       className={classnames(
@@ -17,6 +18,7 @@ const Button: FC<Props> = ({ label, onClick, className, children, disabled, ...r
       )}
       onClick={onClick}
       disabled={disabled}
+      type={type}
       {...rest}
     >
       {label} {children}
