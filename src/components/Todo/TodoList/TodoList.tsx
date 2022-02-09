@@ -4,6 +4,7 @@ import { DragDropContext, Droppable, Draggable, DropResult, resetServerContext }
 import { useAppSelector, useAppDispatch } from '@src/store/store'
 import { updateTodoList } from '@src/store/reducers/todoSlice'
 import { TodoItem } from '@src/components'
+import { useEffect } from 'react'
 
 const TodoList = () => {
   resetServerContext()
@@ -24,6 +25,18 @@ const TodoList = () => {
 
     dispatch(updateTodoList(newTodoList))
   }
+
+  useEffect(() => {
+    const localTodoList = localStorage.getItem('todoList')
+
+    if (localTodoList) {
+      dispatch(updateTodoList(JSON.parse(localTodoList)))
+    }
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem('todoList', JSON.stringify(todoList))
+  })
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
