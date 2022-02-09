@@ -54,7 +54,7 @@ const TodoItem: FC<Props> = ({ id, title, completed }) => {
           <Input onChange={(e) => setEditedValue(e.currentTarget.value)} defaultValue={title} className="w-full" />
         ) : (
           <div className="flex items-center space-x-3">
-            <input type="checkbox" onChange={onToggleComplete} />
+            <input type="checkbox" onChange={onToggleComplete} checked={completed} />
             <p
               className={classnames(styles.todoItemText, {
                 'text-gray-500 line-through': completed,
