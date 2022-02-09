@@ -1,11 +1,13 @@
 import { AnimatePresence } from 'framer-motion'
-import { DragDropContext, Droppable, Draggable, DropResult } from 'react-beautiful-dnd'
+import { DragDropContext, Droppable, Draggable, DropResult, resetServerContext } from 'react-beautiful-dnd'
 
 import { useAppSelector, useAppDispatch } from '@src/store/store'
 import { updateTodoList } from '@src/store/reducers/todoSlice'
 import { TodoItem } from '@src/components'
 
 const TodoList = () => {
+  resetServerContext()
+
   const todoList = useAppSelector((state) => state.todoList)
   const dispatch = useAppDispatch()
 
