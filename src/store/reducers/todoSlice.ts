@@ -32,8 +32,14 @@ const todoSlice = createSlice({
     updateTodoList: (state, action: PayloadAction<Todo[]>) => {
       return (state = action.payload)
     },
+    editTodo: (state, action: PayloadAction<{ id: string; title: string }>) => {
+      const todo = state.find((todo) => todo.id === action.payload.id)
+      if (todo) {
+        todo.title = action.payload.title
+      }
+    },
   },
 })
 
 export default todoSlice.reducer
-export const { addTodo, removeTodo, toggleComplete, clearCompletedTodos, updateTodoList } = todoSlice.actions
+export const { addTodo, removeTodo, toggleComplete, clearCompletedTodos, updateTodoList, editTodo } = todoSlice.actions

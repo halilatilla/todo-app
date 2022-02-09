@@ -42,7 +42,7 @@ const TodoList = () => {
     <DragDropContext onDragEnd={onDragEnd}>
       <Droppable droppableId="list">
         {(provided) => (
-          <ul className="flex flex-col space-y-3 " ref={provided.innerRef} {...provided.droppableProps}>
+          <ul className="flex flex-col space-y-3" ref={provided.innerRef} {...provided.droppableProps}>
             <AnimatePresence>
               {todoList?.map((todo, index) => (
                 <Draggable draggableId={todo.id} key={todo.id} index={index}>
