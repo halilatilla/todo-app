@@ -1,5 +1,5 @@
 .todoItem {
-  @apply flex min-w-[400px] max-w-2xl items-center justify-between space-x-8 rounded bg-gray-900 p-3;
+  @apply flex w-full items-center justify-between space-x-8 rounded bg-gray-900 p-3;
 }
 
 .todoItemText {
