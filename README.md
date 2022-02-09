@@ -1,5 +1,5 @@
 # Todo App
-![Screen Shot 2022-02-06 at 16 10 27](https://user-images.githubusercontent.com/27916419/152682461-b85b39bd-ba64-408e-9705-547d2f441809.png)
+![Screen Shot 2022-02-09 at 12 07 23](https://user-images.githubusercontent.com/27916419/153162237-99514bcf-cfbb-4093-91b0-9c021df02ecf.png)
 
 <br>
 
