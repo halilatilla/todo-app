@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import classnames from 'classnames'
 import { motion } from 'framer-motion'
+import { HiOutlineViewGrid, HiTrash, HiOutlineCheck, HiX } from 'react-icons/hi'
 
 import { removeTodo, toggleComplete } from '@src/store/reducers/todoSlice'
 import { useAppDispatch } from '@src/store/store'
@@ -35,6 +36,7 @@ const TodoItem: FC<Props> = ({ id, title, completed }) => {
         'line-through': completed,
       })}
     >
+      <HiOutlineViewGrid />
       <p
         className={classnames(styles.todoItemText, {
           ' text-gray-500': completed,
@@ -42,15 +44,15 @@ const TodoItem: FC<Props> = ({ id, title, completed }) => {
       >
         {title}
       </p>
-      <div className="space-x-4">
+      <div className="flex-center space-x-4">
         <Button
-          className={classnames('border-green-500 text-green-500', { 'border-gray-500 text-gray-500': completed })}
+          className={classnames('border-none ', { 'border-gray-500 text-gray-500': completed })}
           onClick={onToggleComplete}
         >
-          {completed ? '👎' : '👍'}
+          {completed ? <HiX className="text-xl" /> : <HiOutlineCheck className="text-xl text-green-500" />}
         </Button>
-        <Button className="border-red-500 text-red-500 " onClick={onRemoveTodo}>
-          🗑
+        <Button className="border-none text-red-500 " onClick={onRemoveTodo}>
+          <HiTrash className="text-xl" />
         </Button>
       </div>
     </motion.li>
