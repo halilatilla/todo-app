@@ -3,6 +3,16 @@
 
 <br>
 
+## 💻 Tech-Stack
+- Nextjs  
+- Redux Toolkit 
+- React Beautiful Dnd
+- Typescript
+- Tailwindcss
+- Jest
+
+<br>
+
 ## Development
 
 To install and work on `https://github.com/halilatilla/todo-app`
