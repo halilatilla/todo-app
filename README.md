@@ -4,7 +4,7 @@
 <br>
 
 ## 💻 Tech-Stack
-- Nextjs  
+- NextJS 
 - Redux Toolkit 
 - React Beautiful Dnd
 - Typescript
