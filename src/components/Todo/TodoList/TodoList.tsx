@@ -1,16 +1,19 @@
+import { useEffect } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import { DragDropContext, Droppable, Draggable, DropResult, resetServerContext } from 'react-beautiful-dnd'
 
 import { useAppSelector, useAppDispatch } from '@src/store/store'
 import { updateTodoList } from '@src/store/reducers/todoSlice'
 import { TodoItem } from '@src/components'
-import { useEffect } from 'react'
+import { useLocalStorage } from '@src/hooks'
 
 const TodoList = () => {
   resetServerContext()
 
   const todoList = useAppSelector((state) => state.todoList)
   const dispatch = useAppDispatch()
+
+  const [storedValue, setStoredValue] = useLocalStorage('todoList', todoList)
 
   function onDragEnd(result: DropResult) {
     const { destination, source } = result
@@ -27,16 +30,14 @@ const TodoList = () => {
   }
 
   useEffect(() => {
-    const localTodoList = localStorage.getItem('todoList')
-
-    if (localTodoList) {
-      dispatch(updateTodoList(JSON.parse(localTodoList)))
+    if (storedValue) {
+      dispatch(updateTodoList(storedValue))
     }
   }, [])
 
   useEffect(() => {
-    localStorage.setItem('todoList', JSON.stringify(todoList))
-  })
+    setStoredValue(todoList)
+  }, [todoList])
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
