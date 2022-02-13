@@ -1,5 +1,6 @@
 # Todo App
-![Screen Shot 2022-02-09 at 16 47 04](https://user-images.githubusercontent.com/27916419/153213901-795706bd-f27d-4475-be5f-f766cc0dce35.png)
+![Screen Shot 2022-02-13 at 18 12 41](https://user-images.githubusercontent.com/27916419/153759728-11955b38-86bb-45cf-a3f5-00845895f538.png)
+
 
 <br>
 
@@ -7,6 +8,7 @@
 - NextJS 
 - Redux Toolkit 
 - React Beautiful Dnd
+- Framer Motion
 - Typescript
 - Tailwindcss
 - Jest
