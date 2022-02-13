@@ -1,8 +1,8 @@
 import { Menu, Transition } from '@headlessui/react'
 import { Fragment, FC } from 'react'
-import { HiDotsVertical, HiTrash, HiPencil } from 'react-icons/hi'
+import { HiDotsVertical, HiTrash, HiPencil, HiDuplicate } from 'react-icons/hi'
 
-import { removeTodo } from '@src/store/reducers/todoSlice'
+import { removeTodo, duplicateTodo } from '@src/store/reducers/todoSlice'
 import { useAppDispatch } from '@src/store/store'
 import { Button } from '@src/components'
 
@@ -17,10 +17,15 @@ const TodoItemMenu: FC<Props> = ({ id, setIsEdit }) => {
   const onRemoveTodo = () => {
     dispatch(removeTodo(id))
   }
+
+  const onDuplicateTodo = () => {
+    dispatch(duplicateTodo(id))
+  }
+
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <Menu.Button>
+        <Menu.Button as="div">
           <Button className="border-none">
             <HiDotsVertical className="h-5 w-5 text-violet-200 hover:text-violet-100" aria-hidden="true" />
           </Button>
@@ -40,6 +45,11 @@ const TodoItemMenu: FC<Props> = ({ id, setIsEdit }) => {
             <Menu.Item>
               <Button onClick={() => setIsEdit(true)} className="border-none shadow-none">
                 <HiPencil className="text-xl" />
+              </Button>
+            </Menu.Item>
+            <Menu.Item>
+              <Button onClick={onDuplicateTodo} className="border-none shadow-none">
+                <HiDuplicate className="text-xl" />
               </Button>
             </Menu.Item>
             <Menu.Item>
