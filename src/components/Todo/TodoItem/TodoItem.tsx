@@ -8,8 +8,8 @@ import { toggleComplete, editTodo } from '@src/store/reducers/todoSlice'
 import { useAppDispatch } from '@src/store/store'
 import { Button, Input } from '@src/components'
 import { isTextEmpty, removeWhiteSpace } from '@src/lib'
-
 import TodoItemMenu from './TodoItemMenu/TodoItemMenu'
+
 import styles from './todoItem.module.css'
 
 export interface Props {

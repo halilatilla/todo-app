@@ -10,7 +10,7 @@ export interface Todo {
 const initialState: Todo[] = []
 
 const todoSlice = createSlice({
-  name: 'todos',
+  name: 'todo',
   initialState,
   reducers: {
     addTodo: (state, action: PayloadAction<string>) => {
@@ -26,7 +26,7 @@ const todoSlice = createSlice({
         todo.completed = !todo.completed
       }
     },
-    clearCompletedTodos: (state) => {
+    clearCompletedTodoList: (state) => {
       return state.map((todo) => (todo.completed ? { ...todo, completed: false } : todo))
     },
     updateTodoList: (state, action: PayloadAction<Todo[]>) => {
@@ -38,8 +38,15 @@ const todoSlice = createSlice({
         todo.title = action.payload.title
       }
     },
+    duplicateTodo: (state, action: PayloadAction<string>) => {
+      const todo = state.find((todo) => todo.id === action.payload)
+      if (todo) {
+        state.push({ ...todo, id: nanoid() })
+      }
+    },
   },
 })
 
 export default todoSlice.reducer
-export const { addTodo, removeTodo, toggleComplete, clearCompletedTodos, updateTodoList, editTodo } = todoSlice.actions
+export const { addTodo, removeTodo, toggleComplete, clearCompletedTodoList, updateTodoList, editTodo, duplicateTodo } =
+  todoSlice.actions

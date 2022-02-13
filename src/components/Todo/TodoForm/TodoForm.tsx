@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { addTodo, clearCompletedTodos } from '@src/store/reducers/todoSlice'
+import { addTodo, clearCompletedTodoList } from '@src/store/reducers/todoSlice'
 import { useAppDispatch } from '@src/store/store'
 import { Input, Button } from '@src/components'
 import { isTextEmpty, removeWhiteSpace } from '@src/lib'
@@ -18,7 +18,7 @@ const TodoForm = () => {
   }
 
   const onClearCompleted = () => {
-    dispatch(clearCompletedTodos())
+    dispatch(clearCompletedTodoList())
   }
 
   return (
