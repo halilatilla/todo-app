@@ -1,14 +1,15 @@
 import { FC, useState } from 'react'
 import classnames from 'classnames'
 import { motion } from 'framer-motion'
-import { HiTrash, HiOutlineCheck, HiX, HiPencil } from 'react-icons/hi'
+import { HiOutlineCheck, HiX } from 'react-icons/hi'
 import { MdDragIndicator } from 'react-icons/md'
 
-import { removeTodo, toggleComplete, editTodo } from '@src/store/reducers/todoSlice'
+import { toggleComplete, editTodo } from '@src/store/reducers/todoSlice'
 import { useAppDispatch } from '@src/store/store'
 import { Button, Input } from '@src/components'
 import { isTextEmpty, removeWhiteSpace } from '@src/lib'
 
+import TodoItemMenu from './TodoItemMenu/TodoItemMenu'
 import styles from './todoItem.module.css'
 
 export interface Props {
@@ -21,10 +22,6 @@ const TodoItem: FC<Props> = ({ id, title, completed }) => {
   const [isEdit, setIsEdit] = useState(false)
   const [editedValue, setEditedValue] = useState('')
   const dispatch = useAppDispatch()
-
-  const onRemoveTodo = () => {
-    dispatch(removeTodo(id))
-  }
 
   const onToggleComplete = () => {
     dispatch(toggleComplete(id))
@@ -46,14 +43,14 @@ const TodoItem: FC<Props> = ({ id, title, completed }) => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, x: -20 }}
       key={id}
-      className="flex items-center space-x-3 "
+      className="flex items-center space-x-3"
     >
       <MdDragIndicator className="text-2xl" />
       <div className={classnames(styles.todoItem)}>
         {isEdit ? (
           <Input onChange={(e) => setEditedValue(e.currentTarget.value)} defaultValue={title} className="w-full" />
         ) : (
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-4">
             <input type="checkbox" onChange={onToggleComplete} checked={completed} />
             <p
               className={classnames(styles.todoItemText, {
@@ -65,7 +62,7 @@ const TodoItem: FC<Props> = ({ id, title, completed }) => {
           </div>
         )}
         <div className="flex space-x-1">
-          {isEdit ? (
+          {isEdit && (
             <div className="flex space-x-1">
               <Button onClick={onEditTodo} className="border-none">
                 <HiOutlineCheck className="text-xl text-green-500" />
@@ -74,19 +71,9 @@ const TodoItem: FC<Props> = ({ id, title, completed }) => {
                 <HiX className="text-xl" />
               </Button>
             </div>
-          ) : (
-            <div className="flex items-center space-x-1">
-              <Button
-                onClick={() => setIsEdit(true)}
-                className={classnames('border-none ', { 'border-gray-500 text-gray-500': completed })}
-              >
-                <HiPencil className="text-xl" />
-              </Button>
-            </div>
           )}
-          <Button className="border-none text-red-500 " onClick={onRemoveTodo}>
-            <HiTrash className="text-xl" />
-          </Button>
+
+          <TodoItemMenu id={id} setIsEdit={setIsEdit} />
         </div>
       </div>
     </motion.li>
