@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import classnames from 'classnames'
 import { AnimatePresence } from 'framer-motion'
 import { DragDropContext, Droppable, Draggable, DropResult, resetServerContext } from 'react-beautiful-dnd'
 
@@ -47,8 +48,13 @@ const TodoList = () => {
             <AnimatePresence>
               {todoList?.map((todo, index) => (
                 <Draggable draggableId={todo.id} key={todo.id} index={index}>
-                  {(provided) => (
-                    <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                  {(provided, { isDragging }) => (
+                    <div
+                      ref={provided.innerRef}
+                      {...provided.draggableProps}
+                      {...provided.dragHandleProps}
+                      className={classnames({ 'opacity-80': isDragging })}
+                    >
                       <TodoItem id={todo.id} title={todo.title} completed={todo.completed} />
                     </div>
                   )}
