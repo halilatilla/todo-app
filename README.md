@@ -1,4 +1,7 @@
 # Todo App
+You can drag and drop , add , remove and mark items as complete. Items persist with refresh using local storage.
+<br>
+
 ![Screen Shot 2022-02-13 at 18 28 24](https://user-images.githubusercontent.com/27916419/153760347-cdc3113f-5061-4409-b52c-a4a44bf3ef7f.png)
 
 
