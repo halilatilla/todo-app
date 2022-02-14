@@ -15,7 +15,7 @@ describe('Input', () => {
   it('renders Input', () => {
     render(<Input {...DATA} />)
 
-    const input = screen.getByTestId('input')
+    const input = screen.getByRole('textbox')
 
     expect(input).toBeInTheDocument()
   })

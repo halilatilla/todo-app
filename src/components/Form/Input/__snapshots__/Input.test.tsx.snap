@@ -4,7 +4,6 @@ exports[`Input renders correctly 1`] = `
 <div>
   <label
     class="block"
-    data-testid="input"
   >
     <input
       class="input"

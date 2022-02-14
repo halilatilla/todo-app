@@ -16,7 +16,7 @@ interface Props {
 
 const Input: FC<Props> = ({ label, type = 'text', className, classNameInput, ...rest }) => {
   return (
-    <label className={classnames('block', className)} data-testid="input">
+    <label className={classnames('block', className)}>
       {label && <span className="text-sm capitalize text-gray-300">{label}</span>}
       <input type={type} className={classnames(styles.input, classNameInput)} {...rest} />
     </label>
