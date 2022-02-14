@@ -10,7 +10,7 @@ import { Button, Input } from '@src/components'
 import { isTextEmpty, removeWhiteSpace } from '@src/lib'
 import TodoItemMenu from './TodoItemMenu/TodoItemMenu'
 
-import styles from './todoItem.module.css'
+import styles from './TodoItem.module.css'
 
 export interface Props {
   id: string
@@ -64,10 +64,10 @@ const TodoItem: FC<Props> = ({ id, title, completed }) => {
         <div className="flex space-x-1">
           {isEdit && (
             <div className="flex space-x-1">
-              <Button onClick={onEditTodo} className="border-none">
+              <Button onClick={onEditTodo} appearance="icon">
                 <HiOutlineCheck className="text-xl text-green-500" />
               </Button>
-              <Button onClick={onEditTodoCancel} className="border-none">
+              <Button onClick={onEditTodoCancel} appearance="icon">
                 <HiX className="text-xl" />
               </Button>
             </div>

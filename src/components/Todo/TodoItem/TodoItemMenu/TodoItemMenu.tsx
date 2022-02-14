@@ -43,17 +43,17 @@ const TodoItemMenu: FC<Props> = ({ id, setIsEdit }) => {
         <Menu.Items className="absolute right-0 z-50 mt-2 origin-top-right  rounded-md bg-gray-700  focus:outline-none">
           <div className="px-1 py-1 ">
             <Menu.Item>
-              <Button onClick={() => setIsEdit(true)} className="border-none shadow-none">
+              <Button onClick={() => setIsEdit(true)} appearance="icon">
                 <HiPencil className="text-xl" />
               </Button>
             </Menu.Item>
             <Menu.Item>
-              <Button onClick={onDuplicateTodo} className="border-none shadow-none">
+              <Button onClick={onDuplicateTodo} appearance="icon">
                 <HiDuplicate className="text-xl" />
               </Button>
             </Menu.Item>
             <Menu.Item>
-              <Button className="border-none text-red-300  shadow-none" onClick={onRemoveTodo}>
+              <Button className="text-red-300" appearance="icon" onClick={onRemoveTodo}>
                 <HiTrash className="text-xl" />
               </Button>
             </Menu.Item>
