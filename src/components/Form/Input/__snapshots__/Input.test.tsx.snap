@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input renders correctly 1`] = `
+<div>
+  <label
+    class="block"
+    data-testid="input"
+  >
+    <input
+      class="input"
+      type="text"
+    />
+  </label>
+</div>
+`;
