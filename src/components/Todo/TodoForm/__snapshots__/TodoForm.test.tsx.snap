@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoForm renders correctly 1`] = `
+<div>
+  <form
+    class="flex items-end justify-between gap-6"
+  >
+    <div
+      class="grid w-full grid-cols-4 items-end space-x-4"
+    >
+      <label
+        class="block col-span-3"
+      >
+        <input
+          class="input"
+          placeholder="Add Todo"
+          type="text"
+          value=""
+        />
+      </label>
+      <button
+        class="button undefined px-5"
+        type="submit"
+      >
+        Add
+         
+      </button>
+    </div>
+    <button
+      class="button undefined min-w-max px-4"
+      type="button"
+    >
+      clear completed
+       
+    </button>
+  </form>
+</div>
+`;
