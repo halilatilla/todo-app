@@ -10,7 +10,7 @@ import { Button, Input } from '@src/components'
 import { isTextEmpty, removeWhiteSpace } from '@src/lib'
 import TodoItemMenu from './TodoItemMenu/TodoItemMenu'
 
-import styles from './TodoItem.module.css'
+import styles from './todoItem.module.css'
 
 export interface Props {
   id: string
