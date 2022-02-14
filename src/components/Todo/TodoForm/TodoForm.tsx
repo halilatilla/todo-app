@@ -22,7 +22,7 @@ const TodoForm = () => {
   }
 
   return (
-    <form className="flex items-end  justify-between gap-6" onSubmit={onAddTodo}>
+    <form className="flex items-end justify-between gap-6" onSubmit={onAddTodo}>
       <div className="grid w-full grid-cols-4 items-end space-x-4">
         <Input
           value={title}
