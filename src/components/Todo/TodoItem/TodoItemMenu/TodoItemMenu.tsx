@@ -2,8 +2,7 @@ import { Menu, Transition } from '@headlessui/react'
 import { Fragment, FC } from 'react'
 import { HiDotsVertical, HiTrash, HiPencil, HiDuplicate } from 'react-icons/hi'
 
-import { removeTodo, duplicateTodo } from '@src/store/reducers/todoSlice'
-import { useAppDispatch } from '@src/store/store'
+import { removeTodo, duplicateTodo, useAppDispatch } from '@src/store'
 import { Button } from '@src/components'
 
 export interface Props {

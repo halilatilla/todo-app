@@ -1,7 +1,6 @@
 import { useState } from 'react'
 
-import { addTodo, clearCompletedTodoList } from '@src/store/reducers/todoSlice'
-import { useAppDispatch } from '@src/store/store'
+import { addTodo, clearCompletedTodoList, useAppDispatch } from '@src/store'
 import { Input, Button } from '@src/components'
 import { isTextEmpty, removeWhiteSpace } from '@src/lib'
 
