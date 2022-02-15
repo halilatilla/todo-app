@@ -1,0 +1,29 @@
+.wrapper {
+  @apply flex cursor-pointer items-center space-x-3;
+}
+
+.checkbox {
+  @apply h-6 w-6 appearance-none rounded !bg-white;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+
+.label {
+  @apply text-sm font-medium text-gray-600;
+}
+
+.checkbox::before {
+  content: '';
+  width: 14px;
+  height: 14px;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 70%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  @apply bg-green-600;
+}
+
+.checkbox:checked::before {
+  transform: scale(1);
+}
