@@ -38,6 +38,13 @@ yarn dev
 
 <br>
 
+## Test
+
+```bash
+yarn test
+```
+<br>
+
 ## Authors
 
 - [@halilatilla](https://www.github.com/halilatilla)
