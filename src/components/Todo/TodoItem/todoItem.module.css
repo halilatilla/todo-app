@@ -3,5 +3,5 @@
 }
 
 .todoItemText {
-  @apply max-w-xs overflow-hidden font-medium capitalize md:max-w-md;
+  @apply max-w-xs overflow-hidden capitalize md:max-w-md;
 }
