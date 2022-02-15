@@ -9,12 +9,12 @@ You can drag and drop , add , remove and mark items as complete. Items persist w
 
 ## 💻 Tech-Stack
 - NextJS 
+- Typescript
 - Redux Toolkit 
 - React Beautiful Dnd
 - Framer Motion
-- Typescript
 - Tailwindcss
-- Jest
+- Jest - React Testing Library
 
 <br>
 
