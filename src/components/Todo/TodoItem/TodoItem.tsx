@@ -6,7 +6,7 @@ import { MdDragIndicator } from 'react-icons/md'
 
 import { toggleComplete, editTodo } from '@src/store/reducers/todoSlice'
 import { useAppDispatch } from '@src/store/store'
-import { Button, Input } from '@src/components'
+import { Button, Input, Checkbox } from '@src/components'
 import { isTextEmpty, removeWhiteSpace } from '@src/lib'
 import TodoItemMenu from './TodoItemMenu/TodoItemMenu'
 
@@ -51,7 +51,7 @@ const TodoItem: FC<Props> = ({ id, title, completed }) => {
           <Input onChange={(e) => setEditedValue(e.currentTarget.value)} defaultValue={title} className="w-full" />
         ) : (
           <div className="flex items-center space-x-4">
-            <input type="checkbox" onChange={onToggleComplete} checked={completed} />
+            <Checkbox onChange={onToggleComplete} checked={completed} />
             <p
               className={classnames(styles.todoItemText, {
                 'text-gray-500 line-through': completed,
