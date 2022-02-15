@@ -7,15 +7,16 @@ interface Props {
   label?: string
   className?: string
   classNameCheckbox?: string
-  checked?: boolean
+  classNameLabel?: string
+  checked: boolean
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-const Checkbox: FC<Props> = ({ label, className, classNameCheckbox, ...rest }) => {
+const Checkbox: FC<Props> = ({ label, className, classNameCheckbox, classNameLabel, ...rest }) => {
   return (
     <label className={classnames(styles.wrapper, className)}>
-      {label && <span className={classnames(styles.label)}>{label}</span>}
       <input type="checkbox" className={classnames(styles.checkbox, classNameCheckbox)} {...rest} />
+      {label && <span className={classnames(styles.label, classNameLabel)}>{label}</span>}
     </label>
   )
 }

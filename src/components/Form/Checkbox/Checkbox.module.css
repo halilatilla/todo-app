@@ -3,20 +3,20 @@
 }
 
 .checkbox {
-  @apply h-6 w-6 appearance-none rounded !bg-white;
+  @apply h-5 w-5 appearance-none rounded !bg-white;
   transform: translateY(-0.075em);
   display: grid;
   place-content: center;
 }
 
 .label {
-  @apply text-sm font-medium text-gray-600;
+  @apply font-medium;
 }
 
 .checkbox::before {
   content: '';
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 70%);
   transform: scale(0);
   transform-origin: bottom left;
