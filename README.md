@@ -1,7 +1,7 @@
-# Todo App
-You can drag and drop , add , remove and mark items as complete. Items persist with refresh using local storage.
-<br>
+# 📝 Todo App
+Easily manage your tasks with drag and drop, add, remove, and mark items as complete. Items persist across refreshes using local storage.
 
+<br>
 
 ![Screen Shot 2022-02-15 at 12 06 07](https://user-images.githubusercontent.com/27916419/154028948-1ffeb6fb-6457-4db8-bfbf-d50b5ecb4aa2.png)
 
@@ -9,48 +9,56 @@ You can drag and drop , add , remove and mark items as complete. Items persist w
 
 <br>
 
-## 💻 Tech-Stack
-- NextJS 
-- Typescript
-- Redux Toolkit 
-- React Beautiful Dnd
+## **🧰 Tech Stack**
+
+- Next.js
+- TypeScript
+- Redux Toolkit
+- React Beautiful DnD
 - Framer Motion
-- Tailwindcss
-- Jest - React Testing Library
+- TailwindCSS
+- Jest & React Testing Library
 
 <br>
 
-## Development
+## **🚀 Development**
 
-To install and work on `https://github.com/halilatilla/todo-app`
+To set up and work on the **[Todo App repository](https://github.com/halilatilla/todo-app)**:
 
-```bash
-git clone https://github.com/halilatilla/todo-app
+```
+git clone https://github.com/halilatilla/todo-app.git
 cd todo-app
-npm install or yarn install
+npm install
+// or
+yarn install
 ```
 
-<br>
+Start the development server:
 
-```bash
+```
 yarn dev
 ```
 
-`http://localhost:3000/`
+Visit **[http://localhost:3000/](http://localhost:3000/)**
 
 <br>
 
-## Test
+## **🧪 Testing**
 
-```bash
+Run tests with:
+
+```
 yarn test
 ```
+
 <br>
 
-## Authors
+## **👤 Authors**
 
-- [@halilatilla](https://www.github.com/halilatilla)
+- **[@halilatilla](https://github.com/halilatilla)**
 
-## License
+<br>
 
-[MIT](https://choosealicense.com/licenses/mit/)
+## **📄 License**
+
+This project is licensed under the MIT License - see the **[LICENSE](https://github.com/halilatilla/todo-app/blob/main/LICENSE)** file for details.
